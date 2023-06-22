@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("img/bg.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.header {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 75px;
+}
+
+.card {
+  background-color: rgb(253, 109, 109);
+  min-width: 275px;
+  min-height: 550px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+  transition: transform 0.9s;
+}
+
+.card-head {
+  position: absolute;
+  height: 60px;
+  width: 275px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  background-color: rgb(253, 37, 37);
+  transition: 0.9s;
+  transform: translateY(-50%);
+  box-shadow: 0 4px 18px -2px gray;
+}
+.card-head-open {
+  z-index: 0;
+  transform: rotateX(160deg) translateY(50%);
+  background-color: #fff;
+}
+.card-title {
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 500;
+}
+.card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+}
+img {
+  width: 200px;
+}
+.showMoney {
+  display: none;
+}
+.showMoney-open {
+  display: block;
+}
+.money {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  min-width: 230px;
+  min-height: 500px;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.9s, opacity 0s;
+}
+
+.open-money-1 {
+  transform: rotate(1deg) translate(-50%, -95%);
+  opacity: 1;
+}
+.open-money-2 {
+  transform: rotate(-1deg) translate(-50%, -95%);
+  opacity: 1;
+}
+.open-money-3 {
+  transform: translate(-50%, -95%);
+  opacity: 1;
+}
+
+/* css title */
+.animate-charcter {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 100px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* class for js */
+.card-selected {
+  margin: 0px;
+  position: absolute;
+  z-index: 2;
+}
+.card-not-selected {
+  display: none;
+}
+.container-selected {
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+}
